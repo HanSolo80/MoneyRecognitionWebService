@@ -17,6 +17,9 @@ import java.util.Map;
 /**
  * Spring Controller for the money image recognition. Send an image file as multi part with the name="file"
  * and this controller will return application/json with the percentages for each coin type.
+ *
+ * NOTE: The neuroph-imgrec dependency is not available in maven. I added this as a local repository. Might not work
+ * on your machine, if you don't add it to a local repos on your side.
  */
 
 @Controller
