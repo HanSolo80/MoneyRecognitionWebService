@@ -26,12 +26,12 @@ import java.util.Map;
 @RequestMapping("/new")
 public class MoneyImRecController {
 
-    @RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
     public @ResponseBody Map<String, Double> recognize(@RequestParam("file") MultipartFile file) throws IOException {
         BufferedImage image = ImageIO.read(file.getInputStream());
 
         // load trained neural network saved with Neuroph Studio (specify some existing neural network file here)
-        NeuralNetwork nnet = NeuralNetwork.load(MoneyImRecController.class.getResource("/ann/26.nnet").getPath()); // load trained neural network saved with Neuroph Studio
+        NeuralNetwork<?> nnet = NeuralNetwork.createFromFile(MoneyImRecController.class.getResource("/ann/26.nnet").getPath()); // load trained neural network saved with Neuroph Studio
         // get the image recognition plugin from neural network
         ImageRecognitionPlugin imageRecognition = (ImageRecognitionPlugin) nnet.getPlugin(ImageRecognitionPlugin.class); // get the image recognition plugin from neural network
 
