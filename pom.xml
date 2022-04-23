@@ -20,7 +20,7 @@
     <properties>
         <spring.version>5.3.19</spring.version>
         <neuroph.version>2.92</neuroph.version>
-        <jackson.version>2.9.10.3</jackson.version>
+        <jackson.version>2.12.6.1</jackson.version>
         <commons-fileupload.version>1.3.3</commons-fileupload.version>
         <commons-io.version>2.4</commons-io.version>
     </properties>
